@@ -1,0 +1,19 @@
+type Pizza {
+  _id: String!
+  price: String!
+  toppings: [String]
+}
+
+type Query {
+  pizza(_id: String!): Pizza!
+  pizzas: [Pizza!]!
+}
+
+input NewPizza {
+  price: String!
+  toppings: [String]
+}
+
+type Mutation {
+  bakePizza(input: NewPizza): Pizza!
+}
